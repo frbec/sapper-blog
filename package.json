@@ -1,5 +1,5 @@
 {
-  "name": "Sapper-blog",
+  "name": "sapper-blog",
   "description": "Small personal blog using Sapper, Netlify CMS",
   "license": "MIT",
   "version": "0.0.2",
