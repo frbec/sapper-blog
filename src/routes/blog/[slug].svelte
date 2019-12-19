@@ -14,16 +14,14 @@
 
 <script>
   import fm from "front-matter";
-  import MarkdownIt from "markdown-it";
+  import snarkdown from "snarkdown";
 
   export let postMd;
-
-  const md = new MarkdownIt();
 
   $: frontMatter = fm(postMd);
   $: post = {
     ...frontMatter.attributes,
-    html: md.render(frontMatter.body)
+    html: snarkdown(frontMatter.body)
   };
 </script>
 
