@@ -57,7 +57,7 @@
   </script>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1>Bloggy blog</h1>
 
 <figure>
   <img alt="Borat" src="great-success.png" />
@@ -65,7 +65,5 @@
 </figure>
 
 <p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
+  <strong>This is a little blog of mine. I hope you feel welcome</strong>
 </p>
