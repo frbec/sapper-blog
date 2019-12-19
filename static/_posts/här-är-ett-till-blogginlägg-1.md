@@ -7,4 +7,4 @@ Här är lite text
 
 och en bild också:
 
-![En glad kille i grå t-shirt](/media/fredrik.jpg "Här är jag.")
+![En glad kille i grå t-shirt](/media/fredrik.jpg)
