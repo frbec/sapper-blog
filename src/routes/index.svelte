@@ -67,3 +67,12 @@
 <p>
   <strong>This is a little blog of mine. I hope you feel welcome</strong>
 </p>
+<p>
+  Here are some links to me on various other websites:
+  <ul>
+    <li><a href="https://twitter.com/frbec" rel="me">@frbec on Twitter</a></li>
+    <li><a href="https://github.com/frbec/" rel="me">frbec on GitHub</a></li>
+    <li><a href="https://www.facebook.com/frbec" rel="me">frbec on Facebook</a></li>
+    <li><a href="https://www.instagram.com/frbec/" rel="me">frbec on Instagram</a></li>
+  </ul>
+</p>
