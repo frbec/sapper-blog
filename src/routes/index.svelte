@@ -1,4 +1,12 @@
+  <script context="module">
+      export function preload({ params, query }) {
+        return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
+          return { posts };
+        });
+      }
+    </script>
 <script>
+  import moment from "moment";
   import { onMount } from "svelte";
 
   onMount(() => {
@@ -12,73 +20,84 @@
       });
     }
   });
+
+	export let posts;
 </script>
 
 <style>
   h1,
-  figure,
+  h2,
+  h4,
   p {
-    text-align: center;
     margin: 0 auto;
   }
 
   h1 {
-    font-size: 2.8em;
+    font-size: 2em;
     text-transform: uppercase;
     font-weight: 700;
-    margin: 0 0 0.5em 0;
+    margin-bottom: 0.5em;
   }
 
-  figure {
-    margin: 0 0 1em 0;
+  h2 {
+    font-size: 1.6em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
   }
 
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
+  h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.5em;
   }
 
   p {
-    margin: 1em auto;
+    margin-bottom: 1em
+  }
+
+  article {
+    margin-bottom: 2em;
+  }
+
+  article:last-child {
+    margin-bottom: 0;
+  }
+
+  .category {
+    margin-left: 0.5em;
+    color: blue;
   }
 
   @media (min-width: 480px) {
     h1 {
-      font-size: 4em;
+      font-size: 3em;
     }
   }
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Beckius Blabs</title>
+  <!-- Import netlify identity check -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js">
 
   </script>
 </svelte:head>
 
-<h1>Bloggy blog</h1>
+<h1>Recent Blabbings</h1>
 
-<figure>
-  <img alt="Borat" src="great-success.png" />
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
-
-<p>
-  <strong>This is a little blog of mine. I hope you feel welcome</strong>
-</p>
-<p>Here are some links to me on various other websites:</p>
-<ul>
-  <li>
-    <a href="https://twitter.com/frbec" rel="me">@frbec on Twitter</a>
-  </li>
-  <li>
-    <a href="https://github.com/frbec/" rel="me">frbec on GitHub</a>
-  </li>
-  <li>
-    <a href="https://www.facebook.com/frbec" rel="me">frbec on Facebook</a>
-  </li>
-  <li>
-    <a href="https://www.instagram.com/frbec/" rel="me">frbec on Instagram</a>
-  </li>
-</ul>
+<div>
+	{#each posts as post}
+		<!-- we're using the non-standard `rel=prefetch` attribute to
+				tell Sapper to load the data for the page as soon as
+				the user hovers over the link or taps it, instead of
+				waiting for the 'click' event -->
+		<article>
+      <h4>{moment(post.date).format("MMMM D, YYYY")}<span class="category">{post.category}</span></h4>
+			<h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
+			{#if post.description}
+			<p>{post.description}</p>
+			{/if}
+		</article>
+	{/each}
+</div>

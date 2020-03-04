@@ -15,6 +15,7 @@
 <script>
   import fm from "front-matter";
   import snarkdown from "snarkdown";
+  import moment from "moment"
 
   export let postMd;
 
@@ -65,7 +66,13 @@
   <title>{post.title}</title>
 </svelte:head>
 
+<nav><a href="/" >Go Back</a></nav>
+
 <h1>{post.title}</h1>
+
+<div class="meta">
+<p>Published {moment(post.date).format("YYYY-MM-DD, hh:mm")}</p>
+</div>
 
 <div class="content">
   {@html post.html}
