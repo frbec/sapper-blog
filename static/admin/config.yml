@@ -6,26 +6,43 @@ media_folder: static/uploads # Media files will be stored in the repo under stat
 public_folder: /uploads # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
-    label: "Blog" # Used in the GUI
+  - name: "english_posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Blabbings in English" # Used in the GUI
     folder: "static/_posts" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., title.md
+    filter: { field: "language", value: "en" }
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Language", name: "language", widget: "select", options: ["en", "sv"] }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", dateFormat: "DD MMM YYYY" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Tags", name: "tags", widget: "list", required: false }
+  - name: "swedish_posts" 
+    label: "Inlägg på svenska" 
+    folder: "static/_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    filter: { field: "language", value: "sv" }
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Språk", name: "language", widget: "select", options: ["en", "sv"] }
+      - { label: "Rubrik", name: "title", widget: "string" }
+      - { label: "Kategori", name: "category", widget: "string" }
+      - { label: "Publiceringsdatum", name: "date", widget: "datetime", dateFormat: "DD MMM YYYY" }
+      - { label: "Ingress", name: "description", widget: "text" }
+      - { label: "Brödtext", name: "body", widget: "markdown", required: false }
+      - { label: "Taggar", name: "tags", widget: "list", required: false }
 
-  - name: "authors" # Used in routes, e.g., /admin/collections/blog
-    label: "Authors" # Used in the GUI
-    folder: "static/_authors" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: "{{slug}}" # Filename template, e.g., title.md
-    fields: # The fields for each document, usually in front matter
+  - name: "authors" 
+    label: "Authors"
+    folder: "static/_authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "author" }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Photo", name: "photo", widget: "image", required: false}
