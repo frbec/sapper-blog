@@ -14,9 +14,11 @@ collections:
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", dateFormat: "DD MMM YYYY" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
 
   - name: "authors" # Used in routes, e.g., /admin/collections/blog
     label: "Authors" # Used in the GUI
