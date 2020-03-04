@@ -1,34 +1,28 @@
 <script>
-	import Author from '../components/Author.svelte';
-	import Profile from '../components/Profile.svelte';
+	import Aside from "../components/Aside.svelte"
+	import Footer from "../components/Footer.svelte";
 </script>
 
 <style>
 	main {
 		display: flex;
-		justify-content: center
+		flex-direction: column-reverse;
+		justify-content: center;
+		margin: auto;
+		padding: 2em 1em;
 	}
-	section {
-		width: 50em;
-	}
-	aside {
-		display: flex;
-		flex-direction: column;
-		max-width: 20em
-	}
-	.divider {
-		border-left: 1px solid grey;
-		margin: 2em;
+
+	@media (min-width: 800px) {
+		main {
+			flex-direction: row;
+			max-width: 56em;
+		}
 	}
 </style>
 <main>
-	<aside>
-	<Author />
-	<Profile />
-	© Fredrik Beckius 2020
-	</aside>
-	<div class="divider"></div>
+	<Aside />
 	<section>
 		<slot></slot>
 	</section>
 </main>
+<Footer />

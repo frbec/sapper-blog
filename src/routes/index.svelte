@@ -6,8 +6,8 @@
       }
     </script>
 <script>
-  import moment from "moment";
   import { onMount } from "svelte";
+  import PostListing from "../components/PostListing.svelte"
 
   onMount(() => {
     if (window.netlifyIdentity) {
@@ -26,10 +26,7 @@
 </script>
 
 <style>
-  h1,
-  h2,
-  h4,
-  p {
+  h1 {
     margin: 0 auto;
   }
 
@@ -40,46 +37,17 @@
     margin-bottom: 0.5em;
   }
 
-  h2 {
-    font-size: 1.6em;
-    font-weight: 500;
-    margin-bottom: 0.5em;
-  }
-
-  h4 {
-    font-size: 1em;
-    text-transform: uppercase;
-    font-weight: 500;
-    margin-bottom: 0.5em;
-  }
-
-  p {
-    margin-bottom: 1em
-  }
-
-  article {
-    margin-bottom: 2em;
-  }
-
-  article:last-child {
-    margin-bottom: 0;
-  }
-
-  .category {
-    margin-left: 0.5em;
-    color: blue;
-  }
-
   label {
     cursor: pointer;
     display: inline-block;
-    background-color: rgb(205, 230, 236);
-    border: 1px solid rgb(132, 198, 219);
-    padding: .5em;
-    margin-bottom: 1em
+    border: 10px solid rgb(29, 45, 56);
+    border-radius: 12px;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    font-size: 0.9em;
   }
 
-  @media (min-width: 480px) {
+  @media (min-width: 600px) {
     h1 {
       font-size: 3em;
     }
@@ -101,20 +69,12 @@
 Show Swedish posts
 </label>
 
-<div>
 {#each posts as post (post.slug)}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
     {#if showSwedish || post.language === "en"}
-		<article>
-      <h4>{moment(post.date).format("MMMM D, YYYY")}<span class="category">{post.category}</span></h4>
-			<h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
-			{#if post.description}
-			<p>{post.description}</p>
-			{/if}
-		</article>
+      <PostListing {post} />
     {/if}
 	{/each}
-</div>

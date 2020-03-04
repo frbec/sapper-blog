@@ -1,7 +1,13 @@
 
 
 <style>
-
+p, li {
+    font-size: 0.9em
+  }
+ul {
+  list-style: none;
+  padding: 0;
+}
 </style>
 
 <div>

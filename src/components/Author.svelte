@@ -6,17 +6,19 @@
     figure {
         margin: 0
     }
-
     img {
         width: 72px;
         height: 72px;
-        border-radius: 100%
+        border-radius: 6px;
     }
-
   h3 {
     font-size: 1.4em;
     font-weight: 700;
     margin-bottom: 0.5em;
+  }
+  p {
+    font-size: 0.9em;
+    margin: 0 0 0.5em;
   }
 
 </style>
