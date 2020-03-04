@@ -1,5 +1,6 @@
 ---
 template: post
+language: se
 title: Var kommer alla pengar ifrån?
 slug: var-kommer-alla-pengar-ifran
 draft: false
