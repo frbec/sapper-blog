@@ -43,9 +43,8 @@ collections:
 
   - name: "authors" 
     label: "Authors"
+    identifier_field: "name"
     folder: "static/_authors"
-    create: true
-    slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "author" }
       - { label: "Name", name: "name", widget: "string" }
