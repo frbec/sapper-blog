@@ -1,9 +1,6 @@
 <script>
 	import Author from '../components/Author.svelte';
-	import Nav from '../components/Nav.svelte';
 	import Profile from '../components/Profile.svelte';
-
-	export let segment;
 </script>
 
 <style>
@@ -26,9 +23,6 @@
 </style>
 <main>
 	<aside>
-	<!-- Hiding nav until needed
-	<Nav {segment}/>
-	-->
 	<Author />
 	<Profile />
 	© Fredrik Beckius 2020
