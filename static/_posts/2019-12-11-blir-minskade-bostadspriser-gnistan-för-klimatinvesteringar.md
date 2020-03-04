@@ -1,6 +1,6 @@
 ---
 template: post
-language: se
+language: sv
 title: Blir minskade bostadspriser gnistan för klimatinvesteringar?
 slug: minskade-bostadspriser-gnista-for-klimatinvesteringar
 draft: false

@@ -1,6 +1,6 @@
 ---
 template: post
-language: se
+language: sv
 title: Kärnkraftdebatten som inte vill dö
 slug: karnkraftsdebatten-som-inte-vill-do
 draft: true

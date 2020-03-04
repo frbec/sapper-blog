@@ -1,6 +1,6 @@
 ---
 template: post
-language: se
+language: sv
 title: Enkla bortförklaringar gör det svårt att ta ansvar
 slug: enkla-bortforklaringar
 draft: false
