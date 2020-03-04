@@ -21,7 +21,8 @@
     }
   });
 
-	export let posts;
+  export let posts;
+  export let showSwedish = true;
 </script>
 
 <style>
@@ -69,6 +70,15 @@
     color: blue;
   }
 
+  label {
+    cursor: pointer;
+    display: inline-block;
+    background-color: rgb(205, 230, 236);
+    border: 1px solid rgb(132, 198, 219);
+    padding: .5em;
+    margin-bottom: 1em
+  }
+
   @media (min-width: 480px) {
     h1 {
       font-size: 3em;
@@ -86,12 +96,18 @@
 
 <h1>Recent Blabbings</h1>
 
+<label>
+<input type="checkbox" bind:checked={showSwedish} aria-checked="true">
+Show Swedish posts
+</label>
+
 <div>
-	{#each posts as post}
+{#each posts as post (post.slug)}
 		<!-- we're using the non-standard `rel=prefetch` attribute to
 				tell Sapper to load the data for the page as soon as
 				the user hovers over the link or taps it, instead of
 				waiting for the 'click' event -->
+    {#if showSwedish || post.language === "en"}
 		<article>
       <h4>{moment(post.date).format("MMMM D, YYYY")}<span class="category">{post.category}</span></h4>
 			<h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
@@ -99,5 +115,6 @@
 			<p>{post.description}</p>
 			{/if}
 		</article>
+    {/if}
 	{/each}
 </div>
