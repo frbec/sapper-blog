@@ -31,7 +31,9 @@
 </figure>
 <h3>Fredrik Beckius</h3>
 <p>
-  I believe that the world needs changing from the current trajectory. My
-  intention is to spread a vision of a better world, with equality,
-  sustainability and technology as a helper, instead of a ruler.
+  Product Owner at <a href="https://skyltmax.se">Skyltmax.se</a>, 
+  where I connect e-commerce to manufacturing from a user-centered 
+  perspective. Previoulsy I worked as a UX designer at Afry. I'm based
+   in Gothenburg where I graduated with a M.Sc in Interaction Design 
+   and Technologies in 2017.
 </p>
