@@ -1,6 +1,5 @@
 <script>
   import moment from "moment";
-
   export let post
 </script>
 
@@ -43,8 +42,8 @@
   }</style>
 
 <article>
-      <h4>{moment(post.date).format("MMMM D, YYYY")}<span class="category">{post.category}</span></h4>
-			<h2><a rel='prefetch' href='blog/{post.slug}'>{post.title}</a></h2>
+      <h4>{moment(post.date).format("MMMM YYYY")}{#if post.endDate} - {moment(post.endDate).format("MMMM YYYY")}{/if}<span class="category">{post.category}</span></h4>
+			<h2>{post.title}</h2>
 			{#if post.description}
 			<p>{post.description}</p>
 			{/if}

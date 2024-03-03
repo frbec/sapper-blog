@@ -7,7 +7,7 @@
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
-        border: 10px solid rgb(29, 45, 56);
+        border: 10px solid rgba(240, 230, 140, 0.306);
         border-radius: 24px;
         padding: 1em;
         margin-top: 2em;

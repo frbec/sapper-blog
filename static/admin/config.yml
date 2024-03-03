@@ -41,6 +41,23 @@ collections:
       - { label: "Brödtext", name: "body", widget: "markdown", required: false }
       - { label: "Taggar", name: "tags", widget: "list", required: false }
 
+  - name: "jobs" # Used in routes, e.g., /admin/collections/blog
+    label: "Jobs" # Used in the GUI
+    folder: "static/_posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., title.md
+    filter: { field: "language", value: "en" }
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden", default: "blog" }
+      - { label: "Language", name: "language", widget: "select", options: ["en", "sv"] }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Start Date", name: "date", widget: "datetime", dateFormat: "DD MMM YYYY" }
+      - { label: "End Date", name: "endDate", widget: "datetime", dateFormat: "DD MMM YYYY" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+
   - name: "authors" 
     label: "Authors"
     identifier_field: "name"

@@ -7,8 +7,7 @@
     margin: 0;
   }
   img {
-    width: 72px;
-    height: 72px;
+    width: 100%;
     border-radius: 6px;
   }
   h3 {
@@ -31,9 +30,12 @@
 </figure>
 <h3>Fredrik Beckius</h3>
 <p>
-  Product Owner at <a href="https://skyltmax.se">Skyltmax.se</a>, 
-  where I connect e-commerce to manufacturing from a user-centered 
-  perspective. Previoulsy I worked as a UX designer at Afry. I'm based
+  Systems thinker and design doer, with a human-centered perspective on the digital systems that shape our world.
+</p>
+<p>
+  Currently Product Owner at <a href="https://skyltmax.se">Skyltmax.se</a>, 
+  where I connect e-commerce and manufacturing with a user-centered 
+  approach. Previously I worked as a UX designer at Afry. I'm based
    in Gothenburg where I graduated with a M.Sc in Interaction Design 
    and Technologies in 2017.
 </p>

@@ -10,5 +10,5 @@
     }
 </style>
 <footer>
-<p class="copyright">© Fredrik Beckius 2020</p>
+<p class="copyright">Built with Sapper and Svelte. © Fredrik Beckius 2024</p>
 </footer>
